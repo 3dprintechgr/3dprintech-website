@@ -1,42 +1,601 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="el">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#090d14"><meta name="description" content="3D Printech — 3D εκτυπώσεις, custom κατασκευές και εξατομικευμένες λύσεις.">
-  <title>3D Printech — Από την ιδέα στην κατασκευή</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-<header class="header"><a class="brand" href="#home" aria-label="3D PrinTech home"><img class="brand-logo" src="logo.png" alt="3D PrinTech"></a>
-  <nav class="nav"><a href="#work" data-i18n="navWork">Portfolio</a><a href="#process" data-i18n="navProcess">Η διαδικασία</a><a href="#custom" data-i18n="navCustom">Custom παραγγελία</a><a href="#contact" data-i18n="navContact">Επικοινωνία</a></nav>
-  <div class="header-actions"><button class="lang" id="langToggle" aria-label="Change language">EN</button><a class="button button-small" href="#custom" data-i18n="navCta">Ζήτησε προσφορά <span>↗</span></a><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
-</header>
-<main>
-<section class="hero section-wrap" id="home"><div class="hero-art"><img class="hero-image" src="hero-printer.jpg" alt="3D εκτυπωτής 3D PrinTech σε λειτουργία"></div><div class="hero-content"><div class="hero-copy"><div class="eyebrow"><span class="pulse"></span><span data-i18n="eyebrow">DESIGNED WITH PRECISION · MADE LAYER BY LAYER</span></div>
-<h1 data-i18n="heroTitle">Από την ιδέα<br>στην <em>κατασκευή.</em></h1><p class="hero-lead" data-i18n="heroLead">3D εκτυπώσεις με προσοχή στη λεπτομέρεια. Δημιουργούμε χρηστικά αντικείμενα, custom κατασκευές και μικρές παραγωγές, ακριβώς όπως τα χρειάζεσαι.</p>
-<div class="hero-actions"><a class="button" href="#custom" data-i18n="heroCta">Ξεκίνα μια custom παραγγελία <span>↗</span></a><a class="text-link" href="#work" data-i18n="heroSecondary">Δες τις δημιουργίες <span>↓</span></a></div>
-<div class="hero-stats"><div><strong>FDM</strong><span data-i18n="stat1">Τεχνολογία εκτύπωσης</span></div><div><strong>01—∞</strong><span data-i18n="stat2">Από ένα τεμάχιο έως μικρές σειρές</span></div><div><strong>YOU + IDEA</strong><span data-i18n="stat3">Σχεδιασμός στα μέτρα σου</span></div></div></div>
-<img class="concept-image" src="concept-print.png" alt="Από το σχέδιο CAD στο τελικό 3D εκτυπωμένο αντικείμενο"></div>
-</section>
-<section class="ticker"><div>IDEA <b>✳</b> DESIGN <b>✳</b> PRINT <b>✳</b> CREATE <b>✳</b> IDEA <b>✳</b> DESIGN <b>✳</b> PRINT <b>✳</b> CREATE <b>✳</b></div></section>
-<section class="section-wrap work-section" id="work"><div class="section-heading"><div><div class="eyebrow">01 / OUR PORTFOLIO</div><h2 data-i18n="workTitle">Μερικά πράγματα<br>που <em>φτιάχνουμε.</em></h2></div><p data-i18n="workLead">Κάθε εκτύπωση ξεκινά από μια ανάγκη ή μια ιδέα. Εδώ θα βρεις ένα δείγμα της δουλειάς μας.</p></div>
-<div class="portfolio-grid">
-  <article class="work-card work-large"><div class="work-visual visual-organizer"><div class="organizer"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="visual-tag">01 / FUNCTIONAL</span></div><div class="work-meta"><div><h3 data-i18n="item1">Οργάνωση γραφείου</h3><p data-i18n="item1d">Πρακτικές λύσεις για κάθε workspace</p></div><span>↗</span></div></article>
-  <article class="work-card"><div class="work-visual visual-gear"><div class="gear-shape">✳</div><span class="visual-tag">02 / COMPONENTS</span></div><div class="work-meta"><div><h3 data-i18n="item2">Εξαρτήματα & ανταλλακτικά</h3><p data-i18n="item2d">Μικρά κομμάτια, μεγάλη χρησιμότητα</p></div><span>↗</span></div></article>
-  <article class="work-card"><div class="work-visual visual-decor"><div class="vase"></div><span class="visual-tag">03 / DESIGN</span></div><div class="work-meta"><div><h3 data-i18n="item3">Διακοσμητικά αντικείμενα</h3><p data-i18n="item3d">Σχήμα, υφή και προσωπικότητα</p></div><span>↗</span></div></article>
-</div><p class="portfolio-note" data-i18n="portfolioNote">* Οι παραπάνω εικόνες είναι ενδεικτικά γραφικά της παρουσίασης. Θα αντικατασταθούν με φωτογραφίες των δικών σου εκτυπώσεων.</p></section>
-<section class="process-section" id="process"><div class="section-wrap"><div class="eyebrow">02 / HOW IT WORKS</div><div class="section-heading"><h2 data-i18n="processTitle">Απλά. Συνεργατικά.<br><em>Με ακρίβεια.</em></h2><p data-i18n="processLead">Από την πρώτη επικοινωνία μέχρι το τελικό αντικείμενο, ξέρεις τι γίνεται σε κάθε βήμα.</p></div><div class="steps"><div class="step"><span>01</span><h3 data-i18n="step1">Μας λες την ιδέα</h3><p data-i18n="step1d">Στέλνεις περιγραφή, φωτογραφία ή το 3D αρχείο σου.</p></div><div class="step"><span>02</span><h3 data-i18n="step2">Ετοιμάζουμε προσφορά</h3><p data-i18n="step2d">Εξετάζουμε διαστάσεις, υλικό, χρόνο και κόστος.</p></div><div class="step"><span>03</span><h3 data-i18n="step3">Το εκτυπώνουμε</h3><p data-i18n="step3d">Η ιδέα σου παίρνει μορφή, στρώση προς στρώση.</p></div><div class="step"><span>04</span><h3 data-i18n="step4">Το παραλαμβάνεις</h3><p data-i18n="step4d">Συνεννοούμαστε για αποστολή ή παραλαβή.</p></div></div></div></section>
-<section class="custom-section section-wrap" id="custom"><div class="custom-intro"><div class="eyebrow">03 / MAKE IT YOURS</div><h2 data-i18n="customTitle">Έχεις κάτι<br>στο <em>μυαλό σου;</em></h2><p data-i18n="customLead">Στείλε μας τις λεπτομέρειες και θα επικοινωνήσουμε μαζί σου με μια πρώτη εκτίμηση. Δεκτά αρχεία STL, 3MF και OBJ.</p><div class="file-types"><span>.STL</span><span>.3MF</span><span>.OBJ</span><span>.STEP</span></div><div class="custom-aside"> <span class="aside-mark">↗</span><p data-i18n="customAside">Δεν έχεις έτοιμο 3D αρχείο; Κανένα πρόβλημα. Περιέγραψέ μας τι χρειάζεσαι.</p></div></div>
-<form class="form-card" id="orderForm"><div class="form-top"><div><span class="form-kicker">CUSTOM REQUEST / 001</span><h3 data-i18n="formTitle">Πες μας τι χρειάζεσαι.</h3></div><span class="required-note" data-i18n="required">* Υποχρεωτικά πεδία</span></div>
-<div class="form-grid"><label><span data-i18n="name">Ονοματεπώνυμο *</span><input name="name" required autocomplete="name" placeholder="π.χ. Γιώργος Παπαδόπουλος"></label><label><span>Email *</span><input name="email" type="email" required autocomplete="email" placeholder="name@example.com"></label><label><span data-i18n="phone">Τηλέφωνο</span><input name="phone" type="tel" autocomplete="tel" placeholder="+30 69..."></label><label><span data-i18n="quantity">Ποσότητα</span><input name="quantity" type="number" min="1" value="1"></label>
-<label><span data-i18n="material">Υλικό (αν γνωρίζεις)</span><select name="material"><option value="">—</option><option>PLA</option><option>PETG</option><option>ABS / ASA</option><option>TPU</option><option data-i18n="matUnknown">Δεν γνωρίζω</option></select></label><label><span data-i18n="color">Χρώμα / φινίρισμα</span><input name="color" placeholder="π.χ. μαύρο ματ"></label>
-<label class="full"><span data-i18n="dimensions">Διαστάσεις / πληροφορίες</span><input name="dimensions" placeholder="π.χ. 120 × 80 × 40 mm"></label><label class="full"><span data-i18n="description">Περιγραφή της κατασκευής *</span><textarea name="description" required rows="4" placeholder="Πες μας τι θέλεις να κατασκευάσουμε..."></textarea></label>
-<label class="full upload-label"><span data-i18n="upload">Ανέβασε 3D αρχείο ή εικόνα (προαιρετικά)</span><input id="files" name="files" type="file" multiple accept=".stl,.3mf,.obj,.step,.stp,.png,.jpg,.jpeg,.webp,.pdf"><small data-i18n="uploadHint">STL, 3MF, OBJ, STEP, εικόνες ή PDF · έως 8 MB συνολικά</small><div id="fileNames" class="file-names"></div></label>
-<label class="full consent"><input type="checkbox" name="consent" required><span data-i18n="consent">Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου αποκλειστικά για την απάντηση στο αίτημά μου. *</span></label></div><button class="button submit-button" type="submit"><span data-i18n="sendOrder">Αποστολή αιτήματος</span><span>↗</span></button><p class="form-status" id="orderStatus" role="status" aria-live="polite"></p><p class="privacy-note" data-i18n="privacy">Τα στοιχεία σου δεν χρησιμοποιούνται για διαφημιστικούς σκοπούς.</p></form></section>
-<section class="contact-section" id="contact"><div class="section-wrap contact-inner"><div><div class="eyebrow">04 / SAY HELLO</div><h2 data-i18n="contactTitle">Έχεις μια<br><em>ερώτηση;</em></h2><p data-i18n="contactLead">Για συνεργασίες, γενικές ερωτήσεις ή οτιδήποτε άλλο, στείλε μας ένα μήνυμα.</p></div><form class="contact-form" id="contactForm"><label><span data-i18n="name">Ονοματεπώνυμο *</span><input name="name" required placeholder="Το όνομά σου"></label><label><span>Email *</span><input name="email" type="email" required placeholder="name@example.com"></label><label><span data-i18n="message">Μήνυμα *</span><textarea name="description" required rows="3" placeholder="Πώς μπορούμε να βοηθήσουμε;"></textarea></label><label class="honeypot" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><button class="button" type="submit"><span data-i18n="sendMessage">Στείλε μήνυμα</span><span>↗</span></button><p class="form-status" id="contactStatus" role="status" aria-live="polite"></p></form></div></section>
-</main>
-<footer class="footer"><div class="footer-main"><a class="brand" href="#home"><span class="brand-mark">3D<span>·</span></span><span>PRINTECH</span></a><p data-i18n="footerTag">Ideas made tangible.</p><a href="#home" class="back-top" data-i18n="backTop">Πίσω στην κορυφή ↑</a></div><div class="footer-bottom"><span>© <span id="year"></span> 3D Printech. <span data-i18n="rights">Με επιφύλαξη παντός δικαιώματος.</span></span><span>BUILT LAYER BY LAYER <b>✳</b></span></div></footer>
-<script src="/script.js"></script>
-</body></html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#090d14" name="theme-color"/>
+  <meta content="3D Printech — 3D εκτυπώσεις, custom κατασκευές και εξατομικευμένες λύσεις." name="description"/>
+  <title>
+   3D Printech — Από την ιδέα στην κατασκευή
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- SITE HEADER / NAVIGATION -->
+  <header class="header">
+   <a aria-label="3D PrinTech home" class="brand" href="#home">
+    <img alt="3D PrinTech" class="brand-logo" src="logo.png"/>
+   </a>
+   <nav class="nav">
+    <a data-i18n="navWork" href="#work">
+     Portfolio
+    </a>
+    <a data-i18n="navProcess" href="#process">
+     Η διαδικασία
+    </a>
+    <a data-i18n="navCustom" href="#custom">
+     Custom παραγγελία
+    </a>
+    <a data-i18n="navContact" href="#contact">
+     Επικοινωνία
+    </a>
+   </nav>
+   <div class="header-actions">
+    <button aria-label="Change language" class="lang" id="langToggle">
+     EN
+    </button>
+    <a class="button button-small" data-i18n="navCta" href="#custom">
+     Ζήτησε προσφορά
+     <span>
+      ↗
+     </span>
+    </a>
+    <button aria-label="Open menu" class="menu-toggle" id="menuToggle">
+     ☰
+    </button>
+   </div>
+  </header>
+  <main>
+   <!-- HERO / INTRODUCTION -->
+   <section class="hero section-wrap" id="home">
+    <div class="hero-art">
+     <img alt="3D εκτυπωτής 3D PrinTech σε λειτουργία" class="hero-image" src="hero-printer.jpg"/>
+    </div>
+    <div class="hero-content">
+     <div class="hero-copy">
+      <div class="eyebrow">
+       <span class="pulse">
+       </span>
+       <span data-i18n="eyebrow">
+        DESIGNED WITH PRECISION · MADE LAYER BY LAYER
+       </span>
+      </div>
+      <h1 data-i18n="heroTitle">
+       Από την ιδέα
+       <br/>
+       στην
+       <em>
+        κατασκευή.
+       </em>
+      </h1>
+      <p class="hero-lead" data-i18n="heroLead">
+       3D εκτυπώσεις με προσοχή στη λεπτομέρεια. Δημιουργούμε χρηστικά αντικείμενα, custom κατασκευές και μικρές παραγωγές, ακριβώς όπως τα χρειάζεσαι.
+      </p>
+      <div class="hero-actions">
+       <a class="button" data-i18n="heroCta" href="#custom">
+        Ξεκίνα μια custom παραγγελία
+        <span>
+         ↗
+        </span>
+       </a>
+       <a class="text-link" data-i18n="heroSecondary" href="#work">
+        Δες τις δημιουργίες
+        <span>
+         ↓
+        </span>
+       </a>
+      </div>
+      <div class="hero-stats">
+       <div>
+        <strong>
+         FDM
+        </strong>
+        <span data-i18n="stat1">
+         Τεχνολογία εκτύπωσης
+        </span>
+       </div>
+       <div>
+        <strong>
+         01—∞
+        </strong>
+        <span data-i18n="stat2">
+         Από ένα τεμάχιο έως μικρές σειρές
+        </span>
+       </div>
+       <div>
+        <strong>
+         YOU + IDEA
+        </strong>
+        <span data-i18n="stat3">
+         Σχεδιασμός στα μέτρα σου
+        </span>
+       </div>
+      </div>
+     </div>
+     <img alt="Από το σχέδιο CAD στο τελικό 3D εκτυπωμένο αντικείμενο" class="concept-image" src="concept-print.png"/>
+    </div>
+   </section>
+   <section class="ticker">
+    <div>
+     IDEA
+     <b>
+      ✳
+     </b>
+     DESIGN
+     <b>
+      ✳
+     </b>
+     PRINT
+     <b>
+      ✳
+     </b>
+     CREATE
+     <b>
+      ✳
+     </b>
+     IDEA
+     <b>
+      ✳
+     </b>
+     DESIGN
+     <b>
+      ✳
+     </b>
+     PRINT
+     <b>
+      ✳
+     </b>
+     CREATE
+     <b>
+      ✳
+     </b>
+    </div>
+   </section>
+   <!-- PORTFOLIO / CATEGORIES -->
+   <section class="section-wrap work-section" id="work">
+    <div class="section-heading">
+     <div>
+      <div class="eyebrow">
+       01 / OUR PORTFOLIO
+      </div>
+      <h2 data-i18n="workTitle">
+       Μερικά πράγματα
+       <br/>
+       που
+       <em>
+        φτιάχνουμε.
+       </em>
+      </h2>
+     </div>
+     <p data-i18n="workLead">
+      Κάθε εκτύπωση ξεκινά από μια ανάγκη ή μια ιδέα. Εδώ θα βρεις ένα δείγμα της δουλειάς μας.
+     </p>
+    </div>
+    <div class="portfolio-grid">
+     <a class="work-card category-card" href="galleries/01/index.html">
+      <div class="work-visual category-visual">
+       <img
+        src="categories/01cat.png"
+        alt="Μπρελόκ κατά παραγγελία — Custom Keychains"
+        style="width: 100%; height: 100%; object-fit: cover;"
+       />
+       <span class="visual-tag">01 / CUSTOM KEYCHAINS</span>
+      </div>
+      <div class="work-meta">
+       <div>
+        <h3>Μπρελόκ κατά παραγγελία</h3>
+        <p>Προσωποποιημένα μπρελόκ και μικρές δημιουργίες</p>
+        <small>Custom Keychains</small>
+       </div>
+       <span>↗</span>
+      </div>
+     </a>
+     <a class="work-card category-card" href="galleries/02/index.html">
+      <div class="work-visual category-visual">
+       <img
+        src="categories/02cat.png"
+        alt="Λύσεις για επιχειρήσεις — Business Solutions"
+        style="width: 100%; height: 100%; object-fit: cover;"
+       />
+       <span class="visual-tag">02 / BUSINESS SOLUTIONS</span>
+      </div>
+      <div class="work-meta">
+       <div>
+        <h3>Λύσεις για επιχειρήσεις</h3>
+        <p>Επιγραφές, λογότυπα, QR και NFC κατασκευές</p>
+        <small>Business Solutions</small>
+       </div>
+       <span>↗</span>
+      </div>
+     </a>
+     <a class="work-card category-card" href="galleries/03/index.html">
+      <div class="work-visual category-visual">
+       <img
+        src="categories/03cat.png"
+        alt="Γραφείο & οργάνωση — Desk & Organization"
+        style="width: 100%; height: 100%; object-fit: cover;"
+       />
+       <span class="visual-tag">03 / DESK & ORGANIZATION</span>
+      </div>
+      <div class="work-meta">
+       <div>
+        <h3>Γραφείο & οργάνωση</h3>
+        <p>Βάσεις κινητών και έξυπνα αξεσουάρ γραφείου</p>
+        <small>Desk & Organization</small>
+       </div>
+       <span>↗</span>
+      </div>
+     </a>
+     <a class="work-card category-card" href="galleries/04/index.html">
+      <div class="work-visual category-visual">
+       <img
+        src="categories/04cat.png"
+        alt="Πρακτικές κατασκευές — Functional Prints"
+        style="width: 100%; height: 100%; object-fit: cover;"
+       />
+       <span class="visual-tag">04 / FUNCTIONAL PRINTS</span>
+      </div>
+      <div class="work-meta">
+       <div>
+        <h3>Πρακτικές κατασκευές</h3>
+        <p>Χρήσιμα αντικείμενα για καθημερινές ανάγκες</p>
+        <small>Functional Prints</small>
+       </div>
+       <span>↗</span>
+      </div>
+     </a>
+     <a class="work-card category-card" href="galleries/05/index.html">
+      <div class="work-visual category-visual">
+       <img
+        src="categories/05cat.png"
+        alt="Ανταλλακτικά — Replacement Parts"
+        style="width: 100%; height: 100%; object-fit: cover;"
+       />
+       <span class="visual-tag">05 / REPLACEMENT PARTS</span>
+      </div>
+      <div class="work-meta">
+       <div>
+        <h3>Ανταλλακτικά</h3>
+        <p>Ειδικά ανταλλακτικά για οχήματα, σκάφη και μηχανήματα</p>
+        <small>Replacement Parts</small>
+       </div>
+       <span>↗</span>
+      </div>
+     </a>
+     <a class="work-card category-card" href="galleries/06/index.html">
+      <div class="work-visual category-visual">
+       <img
+        src="categories/06cat.png"
+        alt="Σχεδιασμός & πρωτότυπα — Custom Design & Prototyping"
+        style="width: 100%; height: 100%; object-fit: cover;"
+       />
+       <span class="visual-tag">06 / CUSTOM DESIGN & PROTOTYPING</span>
+      </div>
+      <div class="work-meta">
+       <div>
+        <h3>Σχεδιασμός & πρωτότυπα</h3>
+        <p>Από την αρχική ιδέα μέχρι το λειτουργικό πρωτότυπο</p>
+        <small>Custom Design & Prototyping</small>
+       </div>
+       <span>↗</span>
+      </div>
+     </a>
+    </div>
+    <p class="portfolio-note" data-i18n="portfolioNote">
+     * Οι παραπάνω εικόνες είναι ενδεικτικά γραφικά της παρουσίασης. Θα αντικατασταθούν με φωτογραφίες των δικών σου εκτυπώσεων.
+    </p>
+   </section>
+   <!-- HOW IT WORKS -->
+   <section class="process-section" id="process">
+    <div class="section-wrap">
+     <div class="eyebrow">
+      02 / HOW IT WORKS
+     </div>
+     <div class="section-heading">
+      <h2 data-i18n="processTitle">
+       Απλά. Συνεργατικά.
+       <br/>
+       <em>
+        Με ακρίβεια.
+       </em>
+      </h2>
+      <p data-i18n="processLead">
+       Από την πρώτη επικοινωνία μέχρι το τελικό αντικείμενο, ξέρεις τι γίνεται σε κάθε βήμα.
+      </p>
+     </div>
+     <div class="steps">
+      <div class="step">
+       <span>
+        01
+       </span>
+       <h3 data-i18n="step1">
+        Μας λες την ιδέα
+       </h3>
+       <p data-i18n="step1d">
+        Στέλνεις περιγραφή, φωτογραφία ή το 3D αρχείο σου.
+       </p>
+      </div>
+      <div class="step">
+       <span>
+        02
+       </span>
+       <h3 data-i18n="step2">
+        Ετοιμάζουμε προσφορά
+       </h3>
+       <p data-i18n="step2d">
+        Εξετάζουμε διαστάσεις, υλικό, χρόνο και κόστος.
+       </p>
+      </div>
+      <div class="step">
+       <span>
+        03
+       </span>
+       <h3 data-i18n="step3">
+        Το εκτυπώνουμε
+       </h3>
+       <p data-i18n="step3d">
+        Η ιδέα σου παίρνει μορφή, στρώση προς στρώση.
+       </p>
+      </div>
+      <div class="step">
+       <span>
+        04
+       </span>
+       <h3 data-i18n="step4">
+        Το παραλαμβάνεις
+       </h3>
+       <p data-i18n="step4d">
+        Συνεννοούμαστε για αποστολή ή παραλαβή.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- CUSTOM ORDER FORM -->
+   <section class="custom-section section-wrap" id="custom">
+    <div class="custom-intro">
+     <div class="eyebrow">
+      03 / MAKE IT YOURS
+     </div>
+     <h2 data-i18n="customTitle">
+      Έχεις κάτι
+      <br/>
+      στο
+      <em>
+       μυαλό σου;
+      </em>
+     </h2>
+     <p data-i18n="customLead">
+      Στείλε μας τις λεπτομέρειες και θα επικοινωνήσουμε μαζί σου με μια πρώτη εκτίμηση. Δεκτά αρχεία STL, 3MF και OBJ.
+     </p>
+     <div class="file-types">
+      <span>
+       .STL
+      </span>
+      <span>
+       .3MF
+      </span>
+      <span>
+       .OBJ
+      </span>
+      <span>
+       .STEP
+      </span>
+     </div>
+     <div class="custom-aside">
+      <span class="aside-mark">
+       ↗
+      </span>
+      <p data-i18n="customAside">
+       Δεν έχεις έτοιμο 3D αρχείο; Κανένα πρόβλημα. Περιέγραψέ μας τι χρειάζεσαι.
+      </p>
+     </div>
+    </div>
+    <form class="form-card" id="orderForm">
+     <div class="form-top">
+      <div>
+       <span class="form-kicker">
+        CUSTOM REQUEST / 001
+       </span>
+       <h3 data-i18n="formTitle">
+        Πες μας τι χρειάζεσαι.
+       </h3>
+      </div>
+      <span class="required-note" data-i18n="required">
+       * Υποχρεωτικά πεδία
+      </span>
+     </div>
+     <div class="form-grid">
+      <label>
+       <span data-i18n="name">
+        Ονοματεπώνυμο *
+       </span>
+       <input autocomplete="name" name="name" placeholder="π.χ. Γιώργος Παπαδόπουλος" required=""/>
+      </label>
+      <label>
+       <span>
+        Email *
+       </span>
+       <input autocomplete="email" name="email" placeholder="name@example.com" required="" type="email"/>
+      </label>
+      <label>
+       <span data-i18n="phone">
+        Τηλέφωνο
+       </span>
+       <input autocomplete="tel" name="phone" placeholder="+30 69..." type="tel"/>
+      </label>
+      <label>
+       <span data-i18n="quantity">
+        Ποσότητα
+       </span>
+       <input min="1" name="quantity" type="number" value="1"/>
+      </label>
+      <label>
+       <span data-i18n="material">
+        Υλικό (αν γνωρίζεις)
+       </span>
+       <select name="material">
+        <option value="">
+         —
+        </option>
+        <option>
+         PLA
+        </option>
+        <option>
+         PETG
+        </option>
+        <option>
+         ABS / ASA
+        </option>
+        <option>
+         TPU
+        </option>
+        <option data-i18n="matUnknown">
+         Δεν γνωρίζω
+        </option>
+       </select>
+      </label>
+      <label>
+       <span data-i18n="color">
+        Χρώμα / φινίρισμα
+       </span>
+       <input name="color" placeholder="π.χ. μαύρο ματ"/>
+      </label>
+      <label class="full">
+       <span data-i18n="dimensions">
+        Διαστάσεις / πληροφορίες
+       </span>
+       <input name="dimensions" placeholder="π.χ. 120 × 80 × 40 mm"/>
+      </label>
+      <label class="full">
+       <span data-i18n="description">
+        Περιγραφή της κατασκευής *
+       </span>
+       <textarea name="description" placeholder="Πες μας τι θέλεις να κατασκευάσουμε..." required="" rows="4"></textarea>
+      </label>
+      <label class="full upload-label">
+       <span data-i18n="upload">
+        Ανέβασε 3D αρχείο ή εικόνα (προαιρετικά)
+       </span>
+       <input accept=".stl,.3mf,.obj,.step,.stp,.png,.jpg,.jpeg,.webp,.pdf" id="files" multiple="" name="files" type="file"/>
+       <small data-i18n="uploadHint">
+        STL, 3MF, OBJ, STEP, εικόνες ή PDF · έως 8 MB συνολικά
+       </small>
+       <div class="file-names" id="fileNames">
+       </div>
+      </label>
+      <label class="full consent">
+       <input name="consent" required="" type="checkbox"/>
+       <span data-i18n="consent">
+        Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου αποκλειστικά για την απάντηση στο αίτημά μου. *
+       </span>
+      </label>
+     </div>
+     <button class="button submit-button" type="submit">
+      <span data-i18n="sendOrder">
+       Αποστολή αιτήματος
+      </span>
+      <span>
+       ↗
+      </span>
+     </button>
+     <p aria-live="polite" class="form-status" id="orderStatus" role="status">
+     </p>
+     <p class="privacy-note" data-i18n="privacy">
+      Τα στοιχεία σου δεν χρησιμοποιούνται για διαφημιστικούς σκοπούς.
+     </p>
+    </form>
+   </section>
+   <!-- CONTACT FORM -->
+   <section class="contact-section" id="contact">
+    <div class="section-wrap contact-inner">
+     <div>
+      <div class="eyebrow">
+       04 / SAY HELLO
+      </div>
+      <h2 data-i18n="contactTitle">
+       Έχεις μια
+       <br/>
+       <em>
+        ερώτηση;
+       </em>
+      </h2>
+      <p data-i18n="contactLead">
+       Για συνεργασίες, γενικές ερωτήσεις ή οτιδήποτε άλλο, στείλε μας ένα μήνυμα.
+      </p>
+     </div>
+     <form class="contact-form" id="contactForm">
+      <label>
+       <span data-i18n="name">
+        Ονοματεπώνυμο *
+       </span>
+       <input name="name" placeholder="Το όνομά σου" required=""/>
+      </label>
+      <label>
+       <span>
+        Email *
+       </span>
+       <input name="email" placeholder="name@example.com" required="" type="email"/>
+      </label>
+      <label>
+       <span data-i18n="message">
+        Μήνυμα *
+       </span>
+       <textarea name="description" placeholder="Πώς μπορούμε να βοηθήσουμε;" required="" rows="3"></textarea>
+      </label>
+      <label aria-hidden="true" class="honeypot">
+       Website
+       <input autocomplete="off" name="website" tabindex="-1"/>
+      </label>
+      <button class="button" type="submit">
+       <span data-i18n="sendMessage">
+        Στείλε μήνυμα
+       </span>
+       <span>
+        ↗
+       </span>
+      </button>
+      <p aria-live="polite" class="form-status" id="contactStatus" role="status">
+      </p>
+     </form>
+    </div>
+   </section>
+  </main>
+  <!-- SITE FOOTER -->
+  <footer class="footer">
+   <div class="footer-main">
+    <a class="brand" href="#home">
+     <img alt="3D PrinTech" class="brand-logo" src="logo.png"/>
+    </a>
+    <p data-i18n="footerTag">
+     Ideas made tangible.
+    </p>
+    <a class="back-top" data-i18n="backTop" href="#home">
+     Πίσω στην κορυφή ↑
+    </a>
+   </div>
+   <div class="footer-bottom">
+    <span>
+     ©
+     <span id="year">
+     </span>
+     3D Printech.
+     <span data-i18n="rights">
+      Με επιφύλαξη παντός δικαιώματος.
+     </span>
+    </span>
+    <span>
+     BUILT LAYER BY LAYER
+     <b>
+      ✳
+     </b>
+    </span>
+   </div>
+  </footer>
+  <script src="/script.js">
+  </script>
+ </body>
+</html>

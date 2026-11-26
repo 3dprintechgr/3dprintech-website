@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d14">
+  <meta name="description" content="Μπρελόκ κατά παραγγελία από την 3D PrinTech. Προσωποποιημένα σχέδια και μοναδικές δημιουργίες.">
+  <title>Custom Keychains | 3D PrinTech</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+
+  <style>
+    .gallery-page {
+      min-height: 65vh;
+      padding-top: 76px;
+      padding-bottom: 100px;
+    }
+
+    .gallery-intro {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 48px;
+    }
+
+    .gallery-intro h1 {
+      margin: 22px 0 18px;
+      font-size: clamp(42px, 6vw, 68px);
+    }
+
+    .gallery-intro p {
+      max-width: 440px;
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .gallery-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .gallery-back:hover { color: #d0ff8a; }
+
+    .gallery-shell {
+      position: relative;
+      padding: 0 58px;
+    }
+
+    .gallery-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 18px;
+      transition: transform .45s ease;
+      will-change: transform;
+    }
+
+    .gallery-slide {
+      flex: 0 0 calc((100% - 36px) / 3);
+      min-width: 0;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      cursor: zoom-in;
+    }
+
+    .gallery-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .gallery-slide:hover img { transform: scale(1.045); }
+
+    .gallery-arrow {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      transform: translateY(-50%);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--accent);
+      font-size: 24px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .gallery-arrow:hover {
+      background: var(--accent);
+      color: #10170b;
+    }
+
+    .gallery-arrow:disabled { opacity: .35; cursor: default; }
+    .gallery-prev { left: 0; }
+    .gallery-next { right: 0; }
+
+    .gallery-counter {
+      margin-top: 24px;
+      color: var(--muted);
+      text-align: center;
+      font: 11px var(--mono);
+      letter-spacing: .12em;
+    }
+
+    .gallery-counter span { color: var(--accent); }
+
+    .lightbox {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(3, 6, 10, .94);
+      cursor: zoom-out;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      display: block;
+      max-width: min(1100px, 92vw);
+      max-height: 86vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 80px #000a;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      border: 0;
+      background: none;
+      color: white;
+      font-size: 34px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-slide { flex-basis: calc((100% - 18px) / 2); }
+    }
+
+    @media (max-width: 700px) {
+      .gallery-page { padding-top: 48px; padding-bottom: 70px; }
+      .gallery-intro { grid-template-columns: 1fr; gap: 12px; margin-bottom: 30px; }
+      .gallery-intro h1 { font-size: 46px; }
+      .gallery-shell { padding: 0 42px; }
+      .gallery-track { gap: 12px; }
+      .gallery-slide { flex-basis: 100%; }
+      .gallery-arrow { width: 34px; height: 34px; font-size: 20px; }
+      .lightbox { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/#home" aria-label="3D PrinTech home">
+      <img class="brand-logo" src="/logo.png" alt="3D PrinTech">
+    </a>
+
+    <nav class="nav" id="siteNav">
+      <a href="/#work" data-el="Portfolio" data-en="Portfolio">Portfolio</a>
+      <a href="/#process" data-el="Η διαδικασία" data-en="How it works">Η διαδικασία</a>
+      <a href="/#custom" data-el="Custom παραγγελία" data-en="Custom order">Custom παραγγελία</a>
+      <a href="/#contact" data-el="Επικοινωνία" data-en="Contact">Επικοινωνία</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="lang" id="langToggle" type="button" aria-label="Change language">EN</button>
+      <a class="button button-small" href="/#custom">
+        <span data-el="Ζήτησε προσφορά" data-en="Request a quote">Ζήτησε προσφορά</span>
+        <span>↗</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="gallery-page section-wrap">
+      <div class="gallery-intro">
+        <div>
+          <div class="eyebrow">01 / CUSTOM KEYCHAINS</div>
+          <h1 data-el="Μπρελόκ κατά <em>παραγγελία.</em>" data-en="Custom <em>keychains.</em>">Μπρελόκ κατά <em>παραγγελία.</em></h1>
+          <a class="gallery-back" href="/#work">
+            <span>←</span>
+            <span data-el="Πίσω στο portfolio" data-en="Back to portfolio">Πίσω στο portfolio</span>
+          </a>
+        </div>
+        <p data-el="Δημιουργούμε προσωποποιημένα μπρελόκ με ξεχωριστά σχέδια, χρώματα και λεπτομέρειες. Από ένα μοναδικό προσωπικό αντικείμενο μέχρι μικρές σειρές για δώρα, ομάδες ή επιχειρήσεις — κάθε ιδέα προσαρμόζεται στις ανάγκες σου." data-en="We create personalized keychains with distinctive designs, colors and details. From a one-off personal item to small batches for gifts, teams or businesses — every idea is tailored to your needs.">
+          Δημιουργούμε προσωποποιημένα μπρελόκ με ξεχωριστά σχέδια, χρώματα και λεπτομέρειες. Από ένα μοναδικό προσωπικό αντικείμενο μέχρι μικρές σειρές για δώρα, ομάδες ή επιχειρήσεις — κάθε ιδέα προσαρμόζεται στις ανάγκες σου.
+        </p>
+      </div>
+
+      <div class="gallery-shell" aria-label="Custom Keychains photo gallery">
+        <button class="gallery-arrow gallery-prev" id="galleryPrev" type="button" aria-label="Previous photos">‹</button>
+        <div class="gallery-viewport">
+          <div class="gallery-track" id="galleryTrack">
+            <button class="gallery-slide" type="button" aria-label="Open photo 1"><img src="/galleries/01/01_01.png" alt="Custom keychain 1"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 2"><img src="/galleries/01/01_02.png" alt="Custom keychain 2"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 3"><img src="/galleries/01/01_03.png" alt="Custom keychain 3"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 4"><img src="/galleries/01/01_04.png" alt="Custom keychain 4"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 5"><img src="/galleries/01/01_05.png" alt="Custom keychain 5"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 6"><img src="/galleries/01/01_06.png" alt="Custom keychain 6"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 7"><img src="/galleries/01/01_07.png" alt="Custom keychain 7"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 8"><img src="/galleries/01/01_08.png" alt="Custom keychain 8"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 9"><img src="/galleries/01/01_09.png" alt="Custom keychain 9"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 10"><img src="/galleries/01/01_10.png" alt="Custom keychain 10"></button>
+            <button class="gallery-slide" type="button" aria-label="Open photo 11"><img src="/galleries/01/01_11.png" alt="Custom keychain 11"></button>
+          </div>
+        </div>
+        <button class="gallery-arrow gallery-next" id="galleryNext" type="button" aria-label="Next photos">›</button>
+      </div>
+      <div class="gallery-counter"><span id="currentPhoto">01</span> / 11</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <a class="brand" href="/#home">
+        <img class="brand-logo" src="/logo.png" alt="3D PrinTech">
+      </a>
+      <p>Ideas made tangible.</p>
+      <a class="back-top" href="/#home" data-el="Πίσω στην κορυφή ↑" data-en="Back to top ↑">Πίσω στην κορυφή ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> 3D Printech. <span data-el="Με επιφύλαξη παντός δικαιώματος." data-en="All rights reserved.">Με επιφύλαξη παντός δικαιώματος.</span></span>
+      <span>BUILT LAYER BY LAYER <b>✳</b></span>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">×</button>
+    <img id="lightboxImage" src="" alt="Enlarged custom keychain">
+  </div>
+
+  <script>
+    const track = document.getElementById('galleryTrack');
+    const slides = Array.from(track.querySelectorAll('.gallery-slide'));
+    const counter = document.getElementById('currentPhoto');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    let currentIndex = 0;
+
+    function visibleSlides() {
+      if (window.matchMedia('(max-width: 700px)').matches) return 1;
+      if (window.matchMedia('(max-width: 900px)').matches) return 2;
+      return 3;
+    }
+
+    function updateGallery() {
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const maxIndex = slides.length - visibleSlides();
+      if (currentIndex > maxIndex) currentIndex = 0;
+      const offset = currentIndex * (slideWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+      counter.textContent = String(currentIndex + 1).padStart(2, '0');
+    }
+
+    function moveGallery(direction) {
+      const maxIndex = slides.length - visibleSlides();
+      currentIndex += direction;
+      if (currentIndex > maxIndex) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = maxIndex;
+      updateGallery();
+    }
+
+    document.getElementById('galleryPrev').addEventListener('click', () => moveGallery(-1));
+    document.getElementById('galleryNext').addEventListener('click', () => moveGallery(1));
+
+    slides.forEach((slide) => {
+      slide.addEventListener('click', () => {
+        const image = slide.querySelector('img');
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('open');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightboxImage.src = '';
+    }
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLightbox();
+      if (event.key === 'ArrowRight' && !lightbox.classList.contains('open')) moveGallery(1);
+      if (event.key === 'ArrowLeft' && !lightbox.classList.contains('open')) moveGallery(-1);
+    });
+
+    window.addEventListener('resize', updateGallery);
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const langToggle = document.getElementById('langToggle');
+    let language = 'el';
+
+    function setLanguage(nextLanguage) {
+      language = nextLanguage;
+      document.documentElement.lang = language;
+      document.querySelectorAll('[data-el][data-en]').forEach((element) => {
+        element.innerHTML = element.dataset[language];
+      });
+      langToggle.textContent = language === 'el' ? 'EN' : 'EL';
+    }
+
+    langToggle.addEventListener('click', () => {
+      setLanguage(language === 'el' ? 'en' : 'el');
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const siteNav = document.getElementById('siteNav');
+    menuToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => siteNav.classList.remove('open'));
+    });
+
+    updateGallery();
+  </script>
+</body>
+</html>
